@@ -14,7 +14,7 @@
 		</data>
 		<key>Frameworks/onnxruntime.framework/onnxruntime</key>
 		<data>
-		wCyp5K7UbNPvyZAXxI5eO7N4QnY=
+		4FxLcXK4x3EGX1Oo7NY8CsZUaXA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		C1QcrSmvvElzCWPuxW1/o9Waus0=
+		nJnM3ebRpZ161yFurD0wPxPHxrg=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -73,14 +73,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b0N2unaMQ5f127Bem88t3ZaQND3mKyjhc1kBuEi8gss=
+			MvITkZyBIAYWF+6FNcjpMRSQVocYWC3FhAcO6fc7JMs=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			odUm5Pshn8gXnQJXBsxwgVu7FI2NMM92BsQ7IiYjXdU=
+			dmEVhn+HEQfHsB455T9a+TmjOcuE6pMll+AcKv3P/S0=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
