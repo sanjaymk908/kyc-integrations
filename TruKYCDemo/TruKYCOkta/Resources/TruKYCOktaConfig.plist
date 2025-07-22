@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>clientId</key>
+    <string>0oat7kvy2a7HmQ8b1697</string>
+    <key>issuer</key>
+    <string>https://integrator-9572976.okta.com/oauth2/default</string>
+    <key>scopes</key>
+        <array>
+            <string>openid</string>
+            <string>offline_access</string>
+            <string>profile</string>
+        </array>
+    <key>redirectUri</key>
+    <string>com.trusources.ai.trukyc:/callback</string>
+    <key>applicationName</key>
+    <string>TruKYCOkta</string>
+    <key>applicationVersion</key>
+    <string>1.0.0</string>
+</dict>
+</plist>
+

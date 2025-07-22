@@ -1,0 +1,79 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios18.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Dist
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1
+import AVFoundation
+import AVKit
+import CoreImage.CIFilterBuiltins
+import Combine
+import CoreGraphics
+import CoreImage
+import CoreVideo
+import DeveloperToolsSupport
+import Foundation
+import Lumina
+import Security
+import Swift
+import SwiftUI
+import UIKit
+import Vision
+import _AVKit_SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import onnxruntime
+@_inheritsConvenienceInitializers @objc public class FacialCheck : ObjectiveC.NSObject {
+  public func storeBiometrics(_ embedding: [Swift.Double], key: Swift.String) throws
+  public func retrieveBiometrics(key: Swift.String) throws -> [Swift.Double]?
+  @objc public func clearAll() throws
+  public func areBothEmbeddingsStored() -> Swift.Bool
+  public func performAuth(inputEmbedding: [Swift.Double], completion: @escaping (Swift.Bool, Swift.Double?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol ClientAPIDelegate {
+  @objc func completedKYC(result: Dist.KYCResult)
+}
+@_hasMissingDesignatedInitializers @objc public class KYCResult : ObjectiveC.NSObject {
+  final public let selfieEmbedding: [Swift.Double]?
+  final public let idProfileEmbedding: [Swift.Double]?
+  final public let realProb: Swift.Double
+  final public let fakeProb: Swift.Double
+  final public let realProbAppleAPI: Swift.Double
+  final public let fakeProbAppleAPI: Swift.Double
+  final public let selfieIDprofileMatchProb: Swift.Double
+  final public let isUserAbove21: Swift.Bool
+  final public let is2StepKYC: Swift.Bool
+  final public let isSelfieReal: Swift.Bool
+  final public let failureReason: Dist.ClientAPI.AgeVerificationResult
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class ClientAPI : ObjectiveC.NSObject {
+  @objc public static let shared: Dist.ClientAPI
+  @objc weak public var delegate: (any Dist.ClientAPIDelegate)?
+  @objc public func start(fullScreen: Swift.Bool = true) -> UIKit.UIViewController
+  @objc public func resetKYCState()
+  @objc public func clearBiometrics()
+  @objc public enum AgeVerificationResult : Swift.Int {
+    case inDeterminate
+    case above21
+    case below21
+    case expiredID
+    case selfieIDProfileMismatch
+    case failedToReadID
+    case selfieInaccurate
+    case internalError
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PicIDRecognizer {
+  @objc deinit
+}
+extension Dist.ClientAPI.AgeVerificationResult : Swift.Equatable {}
+extension Dist.ClientAPI.AgeVerificationResult : Swift.Hashable {}
+extension Dist.ClientAPI.AgeVerificationResult : Swift.RawRepresentable {}
