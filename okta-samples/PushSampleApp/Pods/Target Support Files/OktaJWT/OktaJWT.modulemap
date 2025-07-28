@@ -1,0 +1,6 @@
+module OktaJWT {
+  umbrella header "OktaJWT-umbrella.h"
+
+  export *
+  module * { export * }
+}

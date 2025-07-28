@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "okta-mobile-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/okta/okta-mobile-swift",
+      "state" : {
+        "revision" : "1aa3504ab1deefb9ba50bb2d509cea3f349b7ded",
+        "version" : "1.4.3"
+      }
+    }
+  ],
+  "version" : 2
+}

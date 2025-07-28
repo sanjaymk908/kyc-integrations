@@ -1,0 +1,6 @@
+module DeviceAuthenticator {
+  umbrella header "DeviceAuthenticator-umbrella.h"
+
+  export *
+  module * { export * }
+}
