@@ -1,5 +1,15 @@
 {
+  "originHash" : "0484a5a359b9e9fb618dbdc488980daa95bccd94e6d15a960d3d0c3fb12ce79b",
   "pins" : [
+    {
+      "identity" : "lumina",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dokun1/Lumina.git",
+      "state" : {
+        "revision" : "fd560866d53ab8be43e655c55cf4b2f9fcaddf4a",
+        "version" : "1.6.2"
+      }
+    },
     {
       "identity" : "okta-mobile-swift",
       "kind" : "remoteSourceControl",
@@ -8,7 +18,16 @@
         "revision" : "1aa3504ab1deefb9ba50bb2d509cea3f349b7ded",
         "version" : "1.4.3"
       }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "ce592ae52f982c847a4efc0dd881cc9eb32d29f2",
+        "version" : "1.6.4"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

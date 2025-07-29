@@ -88,18 +88,26 @@ class RootCoordinator {
     }
 
     func beginUserConsentFlow(remediationStep: RemediationStepUserConsent) {
-        guard let nav = navController else { return }
-        let userConsentVC = UserConsentViewController.loadFromStoryboard(storyboardName: Self.mainStoryboardName)
-        var viewModel = UserConsentViewModel(remediationStep: remediationStep)
-        viewModel.onRemediationComplete = {
-            nav.dismiss(animated: true)
+        guard let nav = navController else {
+            remediationStep.provide(.denied)
+            return
         }
-        userConsentVC.viewModel = viewModel
-        if nav.presentedViewController == nil {
-            nav.present(userConsentVC, animated: true)
-        } else {
-            nav.dismiss(animated: true) {
-                nav.present(userConsentVC, animated: true)
+        guard let presenter = nav.topViewController  else { return }
+        TruKYCHandler.shared.performBiometric(from: presenter) { [weak self] result in
+            Task {
+                do {
+                    guard let self = self else { return }
+                    switch result {
+                    case .success(let kycResult):
+                        guard kycResult.isSelfieReal && kycResult.isUserAbove21 else {
+                            remediationStep.provide(.denied)
+                            return
+                        }
+                        remediationStep.provide(.approved)
+                    case .failure(let err):
+                        remediationStep.provide(.denied)
+                    }
+                }
             }
         }
     }
