@@ -78,6 +78,6 @@ class SignInViewModel: SignInViewModelProtocol {
     }
 
     var title: String {
-        return "Magenta Bank"
+        return "TruKYC"
     }
 }

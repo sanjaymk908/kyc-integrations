@@ -58,7 +58,7 @@ class RootCoordinator {
             logger: logger
         )
         let settingsView = SettingsLandingView(viewModel: settingsViewModel, onSignOut: {
-            self.begin(on: window) // restart flow on sign out
+            self.beginSignOut()
         })
         let hostingController = UIHostingController(rootView: settingsView)
         navController = UINavigationController(rootViewController: hostingController)
@@ -89,20 +89,29 @@ class RootCoordinator {
     }
 
     private func beginSignInFlow(on window: UIWindow?) {
+        guard let window = window else { return }
 
-        let signInViewModel = SignInViewModel(deviceAuthenticator: deviceAuthenticator,
-                                              oktaWebAuthProtocol: oktaWebAuthenticator,
-                                              logger: logger)
-        let webSignInVC = WebSignInViewController.loadFromStoryboard(storyboardName: Self.mainStoryboardName)
-        webSignInVC.didSignIn = {
-            self.navController?.popViewController(animated: true)
-            self.begin(on: window)
+        let viewModel = SignInViewModel(deviceAuthenticator: deviceAuthenticator,
+                                        oktaWebAuthProtocol: oktaWebAuthenticator,
+                                        logger: logger)
+
+        let signInView = SignInSwiftUIView {
+            viewModel.onSignInTapped(on: window)
         }
-        webSignInVC.viewModel = signInViewModel
-        let navController = UINavigationController(rootViewController: webSignInVC)
-        window?.rootViewController = navController
+
+        let hostingVC = UIHostingController(rootView: signInView)
+        viewModel.didSignIn = { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    self?.begin(on: window)
+                }
+            }
+        }
+
+        let navController = UINavigationController(rootViewController: hostingVC)
+        window.rootViewController = navController
         self.navController = navController
-        window?.makeKeyAndVisible()
+        window.makeKeyAndVisible()
     }
 
     func beginUserConsentFlow(remediationStep: RemediationStepUserConsent) {
@@ -147,7 +156,7 @@ class RootCoordinator {
         var alertTitle: String
         var alertText: String
         if didApprove {
-            alertTitle = "Continue at magentabank.com"
+            alertTitle = "Authorization OK!"
             alertText = "Thanks for securely verifying your identity."
         } else {
             alertTitle = "We've logged this attempt to sign in"

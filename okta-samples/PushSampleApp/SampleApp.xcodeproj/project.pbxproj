@@ -42,6 +42,7 @@
 		C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */; };
 		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
 		C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */; };
+		C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		C1EEBE282E3836B400034863 /* TruKYCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruKYCError.swift; sourceTree = "<group>"; };
 		C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIViewModel.swift; sourceTree = "<group>"; };
 		C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLandingView.swift; sourceTree = "<group>"; };
+		C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnInSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		7FD4370D27FE631D00B0717C /* WebSignIn */ = {
 			isa = PBXGroup;
 			children = (
+				C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */,
 				7FA732B227F6190000C38E10 /* WebSignInViewController.swift */,
 				7F37B85127FB711800211492 /* SignInViewModel.swift */,
 			);
@@ -435,6 +438,7 @@
 				7F47B97927F6361D00E78495 /* RootCoordinator.swift in Sources */,
 				7F808C242811C28E004F7EB0 /* WelcomeViewController.swift in Sources */,
 				7FD4371027FE6A9100B0717C /* OktaWebAuthProtocol.swift in Sources */,
+				C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */,
 				C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */,
 				C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */,
 				7FA732AF27F6190000C38E10 /* AppDelegate.swift in Sources */,

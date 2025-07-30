@@ -13,21 +13,23 @@ struct SettingsLandingView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 32) {
-                Image(systemName: "person.text.rectangle.fill")
-                    .font(.system(size: 64))
-                    .foregroundColor(.blue)
+            VStack(spacing: 16) {
+                VStack(spacing: 8) {
+                    Image(systemName: "person.text.rectangle.fill")
+                        .font(.system(size: 64))
+                        .foregroundColor(.blue)
 
-                Text("TruKYC")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
+                    Text("TruKYC")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                }
+                .padding(.top, 40)
 
                 Form {
                     Section {
                         Toggle(isOn: Binding(
                             get: { viewModel.isEnrolled },
                             set: { newValue in
-                                // Only call didToggleEnrollment; don't set isEnrolled directly
                                 viewModel.didToggleEnrollment(newValue)
                             })) {
                             HStack {
@@ -55,11 +57,9 @@ struct SettingsLandingView: View {
                 Alert(title: Text(alertContext.title),
                       message: Text(alertContext.message),
                       dismissButton: .default(Text("OK")) {
-                          // Optional: clear alert after dismissing
                           viewModel.activeAlert = nil
                       })
             }
-            .padding()
         }
     }
 }
