@@ -14,6 +14,7 @@ import Foundation
 import UIKit
 import DeviceAuthenticator
 import OktaLogger
+import SwiftUI
 
 class RootCoordinator {
 
@@ -41,11 +42,28 @@ class RootCoordinator {
     }
 
     func begin(on window: UIWindow?) {
+        guard let window = window else { return }
         if oktaWebAuthenticator.isSignedIn {
-            beginWelcomeFlow(on: window)
+            beginSwiftUISettingsFlow(on: window)
         } else {
             beginSignInFlow(on: window)
         }
+    }
+
+    private func beginSwiftUISettingsFlow(on window: UIWindow) {
+        let settingsViewModel = SettingsSwiftUIViewModel(
+            deviceAuthenticator: deviceAuthenticator,
+            webAuthenticator: oktaWebAuthenticator,
+            pushNotificationService: pushNotificationService,
+            logger: logger
+        )
+        let settingsView = SettingsLandingView(viewModel: settingsViewModel, onSignOut: {
+            self.begin(on: window) // restart flow on sign out
+        })
+        let hostingController = UIHostingController(rootView: settingsView)
+        navController = UINavigationController(rootViewController: hostingController)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
     }
 
     private func beginWelcomeFlow(on window: UIWindow?) {
@@ -97,6 +115,9 @@ class RootCoordinator {
             Task {
                 do {
                     guard let self = self else { return }
+                    DispatchQueue.main.async {
+                        presenter.dismiss(animated: true)
+                    }
                     switch result {
                     case .success(let kycResult):
                         guard kycResult.isSelfieReal && kycResult.isUserAbove21 else {
@@ -104,7 +125,8 @@ class RootCoordinator {
                             return
                         }
                         remediationStep.provide(.approved)
-                    case .failure(let err):
+                    case .failure(let error):
+                        self.logger?.error(eventName: LoggerEvent.trukyc.rawValue, message: error.userMessage)
                         remediationStep.provide(.denied)
                     }
                 }
@@ -131,9 +153,38 @@ class RootCoordinator {
             alertTitle = "We've logged this attempt to sign in"
             alertText = "The details of this attempt have been logged for security review."
         }
+
         let alert = UIAlertController(title: alertTitle, message: alertText, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        nav.present(alert, animated: true, completion: nil)
+
+        if let topVC = topViewController(startingFrom: nav) {
+            if topVC.presentedViewController == nil {
+                topVC.present(alert, animated: true)
+            } else {
+                logger?.info(eventName: LoggerEvent.userVerification.rawValue, message: "⚠️ Skipping alert — another view controller is already presented.")
+            }
+        }
+    }
+
+    private func topViewController(startingFrom root: UIViewController?) -> UIViewController? {
+        var top = root
+
+        // Traverse through presented view controllers
+        while let presented = top?.presentedViewController {
+            top = presented
+        }
+
+        // If top is a navigation controller, get the visible view controller
+        if let nav = top as? UINavigationController {
+            return nav.visibleViewController
+        }
+
+        // If top is a tab bar controller, get the selected view controller
+        if let tab = top as? UITabBarController {
+            return tab.selectedViewController
+        }
+
+        return top
     }
 
     func beginSettingsFlow() {
@@ -206,5 +257,13 @@ class RootCoordinator {
         guard let navController = navController else { return }
         guard let fileLogger = logger?.destinations[LoggingConstant.fileLoggerDestinationId] as? OktaLoggerFileLogger else { return }
         mailService.sendFileLogs(fileLogger: fileLogger, nav: navController)
+    }
+}
+
+extension RootCoordinator {
+    static func resetAppUIOnSignOut(using coordinator: RootCoordinator, on window: UIWindow) {
+        DispatchQueue.main.async {
+            coordinator.begin(on: window)
+        }
     }
 }

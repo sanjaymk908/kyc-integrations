@@ -43,6 +43,8 @@
 		C1EEBE242E38362700034863 /* TruKYCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE232E38361600034863 /* TruKYCHandler.swift */; };
 		C1EEBE272E38366600034863 /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE262E38366600034863 /* Lumina */; };
 		C1EEBE292E3836BA00034863 /* TruKYCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE282E3836B400034863 /* TruKYCError.swift */; };
+		C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */; };
+		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		C1EEBDF72E3833FE00034863 /* Dist.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dist.framework; sourceTree = "<group>"; };
 		C1EEBE232E38361600034863 /* TruKYCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruKYCHandler.swift; sourceTree = "<group>"; };
 		C1EEBE282E3836B400034863 /* TruKYCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruKYCError.swift; sourceTree = "<group>"; };
+		C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIViewModel.swift; sourceTree = "<group>"; };
+		C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		7F808C252811C3BD004F7EB0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */,
+				C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */,
 				7F808C262811C3CE004F7EB0 /* SettingsViewController.swift */,
 				7F808C282811C5CC004F7EB0 /* SettingsViewModel.swift */,
 				7F808C2A2811C7C6004F7EB0 /* SettingsCell.swift */,
@@ -416,6 +422,8 @@
 				7F47B97927F6361D00E78495 /* RootCoordinator.swift in Sources */,
 				7F808C242811C28E004F7EB0 /* WelcomeViewController.swift in Sources */,
 				7FD4371027FE6A9100B0717C /* OktaWebAuthProtocol.swift in Sources */,
+				C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */,
+				C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */,
 				7FA732AF27F6190000C38E10 /* AppDelegate.swift in Sources */,
 				7F808C272811C3CE004F7EB0 /* SettingsViewController.swift in Sources */,
 				7FA3180928B8351D00770C88 /* MailService.swift in Sources */,

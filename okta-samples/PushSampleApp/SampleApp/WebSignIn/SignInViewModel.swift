@@ -64,7 +64,6 @@ class SignInViewModel: SignInViewModelProtocol {
         }
     }
 
-
     private var isEnrolled: Bool {
         guard !authenticator.allEnrollments().isEmpty else { return false }
         return true
