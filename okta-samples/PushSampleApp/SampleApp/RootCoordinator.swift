@@ -115,7 +115,7 @@ class RootCoordinator {
             Task {
                 do {
                     guard let self = self else { return }
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         presenter.dismiss(animated: true)
                     }
                     switch result {

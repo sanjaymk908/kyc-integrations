@@ -1,6 +1,6 @@
 // Software License Agreement (BSD License)
 //
-// Copyright (c) 2010-2020, Deusty, LLC
+// Copyright (c) 2010-2025, Deusty, LLC
 // All rights reserved.
 //
 // Redistribution and use of this software in source and binary forms,
@@ -22,4 +22,9 @@
             DDLogError(@"%@", description);                                           \
             NSAssert(NO, @"%@", description);                                         \
         }
-#define DDAssertCondition(condition) DDAssert(condition, @"Condition not satisfied: %s", #condition)
+#define DDAssertCondition(condition) DDAssert(condition, @"Condition not satisfied: %@", @(#condition))
+
+/**
+ * Analog to `DDAssertionFailure` from DDAssert.swift for use in Objective C
+ */
+#define DDAssertionFailure(frmt, ...) DDAssert(NO, frmt, ##__VA_ARGS__)

@@ -33,10 +33,6 @@
 		7FD4370C27FE580E00B0717C /* StoryboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4370B27FE580E00B0717C /* StoryboardController.swift */; };
 		7FD4371027FE6A9100B0717C /* OktaWebAuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4370F27FE6A9100B0717C /* OktaWebAuthProtocol.swift */; };
 		7FD4371227FE7FDA00B0717C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4371127FE7FDA00B0717C /* UserDefaults+Extensions.swift */; };
-		B870772D2AEB0B0500DA7E4E /* AuthFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = B870772C2AEB0B0500DA7E4E /* AuthFoundation */; };
-		B870772F2AEB0B0500DA7E4E /* OktaDirectAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B870772E2AEB0B0500DA7E4E /* OktaDirectAuth */; };
-		B87077312AEB0B0500DA7E4E /* OktaOAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = B87077302AEB0B0500DA7E4E /* OktaOAuth2 */; };
-		B87077332AEB0B0500DA7E4E /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = B87077322AEB0B0500DA7E4E /* WebAuthenticationUI */; };
 		C1EEBDF92E3833FE00034863 /* Dist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; platformFilter = ios; };
 		C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; };
 		C1EEBDFB2E38340B00034863 /* Dist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,6 +41,7 @@
 		C1EEBE292E3836BA00034863 /* TruKYCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE282E3836B400034863 /* TruKYCError.swift */; };
 		C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */; };
 		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
+		C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,12 +115,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1EEBE272E38366600034863 /* Lumina in Frameworks */,
-				B87077312AEB0B0500DA7E4E /* OktaOAuth2 in Frameworks */,
 				4391A441A858B26610B4A344 /* libPods-SampleApp.a in Frameworks */,
-				B870772D2AEB0B0500DA7E4E /* AuthFoundation in Frameworks */,
-				B87077332AEB0B0500DA7E4E /* WebAuthenticationUI in Frameworks */,
 				C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */,
-				B870772F2AEB0B0500DA7E4E /* OktaDirectAuth in Frameworks */,
+				C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +276,7 @@
 				7FA732A827F6190000C38E10 /* Frameworks */,
 				7FA732A927F6190000C38E10 /* Resources */,
 				C1EEBDFC2E38340B00034863 /* Embed Frameworks */,
+				C68C0769B184C928B4E2A899 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,11 +284,8 @@
 			);
 			name = SampleApp;
 			packageProductDependencies = (
-				B870772C2AEB0B0500DA7E4E /* AuthFoundation */,
-				B870772E2AEB0B0500DA7E4E /* OktaDirectAuth */,
-				B87077302AEB0B0500DA7E4E /* OktaOAuth2 */,
-				B87077322AEB0B0500DA7E4E /* WebAuthenticationUI */,
 				C1EEBE262E38366600034863 /* Lumina */,
+				C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */,
 			);
 			productName = SampleApp;
 			productReference = 7FA732AB27F6190000C38E10 /* SampleApp.app */;
@@ -346,8 +338,8 @@
 			);
 			mainGroup = 7FA732A227F6190000C38E10;
 			packageReferences = (
-				B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
 				C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */,
+				C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
 			);
 			productRefGroup = 7FA732AC27F6190000C38E10 /* Products */;
 			projectDirPath = "";
@@ -401,6 +393,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68C0769B184C928B4E2A899 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -732,14 +745,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/okta/okta-mobile-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.3;
-			};
-		};
 		C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dokun1/Lumina.git";
@@ -748,33 +753,26 @@
 				minimumVersion = 1.6.2;
 			};
 		};
+		C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/okta/okta-mobile-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B870772C2AEB0B0500DA7E4E /* AuthFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = AuthFoundation;
-		};
-		B870772E2AEB0B0500DA7E4E /* OktaDirectAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = OktaDirectAuth;
-		};
-		B87077302AEB0B0500DA7E4E /* OktaOAuth2 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = OktaOAuth2;
-		};
-		B87077322AEB0B0500DA7E4E /* WebAuthenticationUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B870772B2AEB0B0500DA7E4E /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = WebAuthenticationUI;
-		};
 		C1EEBE262E38366600034863 /* Lumina */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */;
 			productName = Lumina;
+		};
+		C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
+			productName = WebAuthenticationUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

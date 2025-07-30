@@ -2,5 +2,5 @@
 platform :ios, '13.0'
 
 target 'SampleApp' do
-    pod 'DeviceAuthenticator', :path => '../../'
+    pod 'DeviceAuthenticator', :path => '/Users/sanjaymk/Downloads/okta/okta-samples/okta-devices-swift'
 end
