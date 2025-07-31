@@ -21,12 +21,9 @@ class RootCoordinator {
     let deviceAuthenticator: DeviceAuthenticatorProtocol
     let oktaWebAuthenticator: OktaWebAuthProtocol
     let pushNotificationService: PushNotificationService
-    let mailService: MailService
     var remediationEventsHandler: RemediationEventsHandlerProtocol
     var logger: OktaLogger?
     var navController: UINavigationController?
-
-    static let mainStoryboardName = "MainStoryboard"
 
     init(deviceAuthenticator: DeviceAuthenticatorProtocol,
          oktaWebAuthenticator: OktaWebAuthProtocol,
@@ -38,7 +35,6 @@ class RootCoordinator {
         self.pushNotificationService = pushNotificationService
         self.logger = oktaLogger
         self.remediationEventsHandler = remediationEventsHandler
-        self.mailService = MailService()
     }
 
     func begin(on window: UIWindow?) {
@@ -64,28 +60,6 @@ class RootCoordinator {
         navController = UINavigationController(rootViewController: hostingController)
         window.rootViewController = navController
         window.makeKeyAndVisible()
-    }
-
-    private func beginWelcomeFlow(on window: UIWindow?) {
-        let welcomeVC = WelcomeViewController.loadFromStoryboard(storyboardName: Self.mainStoryboardName)
-        welcomeVC.viewModel = WelcomeViewModel(webAuthenticator: oktaWebAuthenticator)
-        welcomeVC.didTapSettings = {
-            self.beginSettingsFlow()
-        }
-        welcomeVC.didTapSignOut = {
-            self.beginSignOut()
-        }
-        welcomeVC.didRequestSignInFaster = { [weak self] in
-            self?.beginSignInFasterFlow()
-        }
-        welcomeVC.didTapShareLogs = { [weak self] in
-            self?.beginLogSharing()
-        }
-        let navController = UINavigationController(rootViewController: welcomeVC)
-        navController.setNavigationBarHidden(false, animated: false)
-        window?.rootViewController = navController
-        self.navController = navController
-        window?.makeKeyAndVisible()
     }
 
     private func beginSignInFlow(on window: UIWindow?) {
@@ -196,18 +170,6 @@ class RootCoordinator {
         return top
     }
 
-    func beginSettingsFlow() {
-        let vc = SettingsViewController.loadFromStoryboard(storyboardName: Self.mainStoryboardName)
-        vc.viewModel = SettingsViewModel(deviceauthenticator: deviceAuthenticator,
-                                         webAuthenticator: oktaWebAuthenticator,
-                                         pushNotificationService: pushNotificationService,
-                                         settingsView: vc,
-                                         logger: logger)
-        let nav = UINavigationController(rootViewController: vc)
-
-        navController?.present(nav, animated: true)
-    }
-
     private func beginSignOut() {
         guard let window = navController?.navigationBar.window else { return }
 
@@ -250,22 +212,6 @@ class RootCoordinator {
             self?.navController?.popViewController(animated: true)
             self?.begin(on: window)
         }
-    }
-
-    private func beginSignInFasterFlow() {
-        let vc = SignInFasterViewController.loadFromStoryboard(storyboardName: Self.mainStoryboardName)
-        vc.didTapSetupButton = { [weak self, weak vc] in
-            vc?.dismiss(animated: true) {
-                self?.beginSettingsFlow()
-            }
-        }
-        navController?.present(vc, animated: true)
-    }
-
-    private func beginLogSharing() {
-        guard let navController = navController else { return }
-        guard let fileLogger = logger?.destinations[LoggingConstant.fileLoggerDestinationId] as? OktaLoggerFileLogger else { return }
-        mailService.sendFileLogs(fileLogger: fileLogger, nav: navController)
     }
 }
 

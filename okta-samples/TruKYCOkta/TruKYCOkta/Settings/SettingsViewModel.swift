@@ -13,11 +13,14 @@
 import Foundation
 import DeviceAuthenticator
 import OktaLogger
+import UIKit
+
+protocol SettingsViewUpdatable: AnyObject {
+    func showAlert(alertTitle: String, alertText: String)
+    func updateView(shouldShowSpinner: Bool)
+}
 
 protocol SettingsViewModelProtocol {
-    func setup(cell: SettingsCell, with row: Int)
-
-    var numberOfRows: Int { get }
     var title: String { get }
     var view: SettingsViewUpdatable? { get }
 }
@@ -67,7 +70,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
     private let logger: OktaLogger?
     var title: String = "Security Settings"
     weak var view: SettingsViewUpdatable?
-    private var cellModels: [SettingsCellProtocol] = []
     private var deviceEnrollment: AuthenticatorEnrollmentProtocol?
 
     init(deviceauthenticator: DeviceAuthenticatorProtocol,
@@ -81,35 +83,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
         self.view = settingsView
         self.logger = logger
         deviceEnrollment = authenticator.allEnrollments().first
-        setupCellModels()
-    }
-
-    private var userVerificationCellModel: UserVerificationCellModel? {
-        // Check if an enrollment exists on device.
-        guard let enrollment = deviceEnrollment else { return nil }
-
-        return UserVerificationCellModel(isEnabled: enrollment.userVerificationEnabled, didToggleSwitch: { [weak self] isOn in
-            self?.toggleUserVerification(enable: isOn)
-        })
-    }
-
-    private var enableCIBACellModel: CIBACellModel? {
-        guard let enrollment = deviceEnrollment else { return nil }
-
-        return CIBACellModel(isEnabled: enrollment.isCIBAEnabled) { [weak self] isOn in
-            self?.toggleCIBATransactions(enable: isOn)
-        }
-    }
-
-    private var enrollmentCellModel: PushSettingsCellModel {
-        let isEnrolled = deviceEnrollment != nil
-        return PushSettingsCellModel(isEnabled: isEnrolled, didToggleSwitch: { [weak self] isOn in
-            guard isOn else {
-                self?.beginEnrollmentDeletion()
-                return
-            }
-            self?.didEnableEnrollmentToggle()
-        })
     }
 
     private var deviceAuthenticatorConfig: DeviceAuthenticatorConfig? {
@@ -124,24 +97,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
             return nil
         }
         return DeviceAuthenticatorConfig(orgURL: url, oidcClientId: clientId)
-    }
-
-    var numberOfRows: Int {
-        return cellModels.count
-    }
-
-    func setup(cell: SettingsCell, with row: Int) {
-        cell.setup(cellModel: cellModels[row])
-    }
-
-    private func setupCellModels() {
-        let cells: [SettingsCellProtocol?] = [
-            EmailSettingsCellModel(email: webAuthenticator.email),
-            enrollmentCellModel,
-            userVerificationCellModel,
-            enableCIBACellModel
-        ]
-        cellModels = cells.compactMap({ $0 })
     }
 
     private func getAccessToken(completion: @escaping (String) -> Void) {
@@ -213,7 +168,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
                 self?.logger?.error(eventName: EnrollmentError.deviceAuthenticatorError(error).description, message: error.localizedDescription)
                 self?.view?.showAlert(alertTitle: EnrollmentError.errorTitle, alertText: error.localizedDescription)
             }
-            self?.setupCellModels()
             self?.view?.updateView(shouldShowSpinner: false)
         }
     }
@@ -244,56 +198,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
                 self?.deviceEnrollment = nil
                 self?.view?.showAlert(alertTitle: "Deletion Successfully", alertText: "Success removing this device as a push authenticator")
             }
-            self?.setupCellModels()
             self?.view?.updateView(shouldShowSpinner: false)
-        }
-    }
-
-    private func toggleUserVerification(enable: Bool) {
-        guard let enrollment = deviceEnrollment else {
-            return
-        }
-        view?.updateView(shouldShowSpinner: true)
-        getAccessToken { accessToken in
-            let authToken = AuthToken.bearer(accessToken)
-            enrollment.setUserVerification(authenticationToken: authToken, enable: enable) { [weak self] error in
-                if let error = error {
-                    self?.view?.showAlert(alertTitle: "Error updating User Verification", alertText: error.localizedDescription)
-                    self?.logger?.error(eventName: LoggerEvent.userVerification.rawValue, message: error.localizedDescription)
-                } else {
-                    self?.view?.showAlert(alertTitle: "Success updating User Verification", alertText: "")
-                }
-                self?.setupCellModels()
-                self?.view?.updateView(shouldShowSpinner: false)
-            }
-        }
-    }
-
-    private func toggleCIBATransactions(enable: Bool) {
-        guard let enrollment = deviceEnrollment else { return }
-        view?.updateView(shouldShowSpinner: true)
-        enrollment.retrieveMaintenanceToken() { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let credential):
-                    let authToken = AuthToken.bearer(credential.access_token)
-                    enrollment.enableCIBATransactions(authenticationToken: authToken, enable: enable) { [weak self] error in
-                        DispatchQueue.main.async {
-                            if let error = error {
-                                self?.view?.showAlert(alertTitle: "Error updating transaction types", alertText: error.localizedDescription)
-                                self?.logger?.error(eventName: LoggerEvent.ciba.rawValue, message: error.localizedDescription)
-                            } else {
-                                self?.view?.showAlert(alertTitle: "Success updating supported transaction types", alertText: "")
-                            }
-                            self?.setupCellModels()
-                            self?.view?.updateView(shouldShowSpinner: false)
-                        }
-                    }
-                case .failure(let error):
-                    self.view?.showAlert(alertTitle: "Error updating transaction types", alertText: error.localizedDescription)
-                    self.logger?.error(eventName: LoggerEvent.ciba.rawValue, message: error.localizedDescription)
-                }
-            }
         }
     }
 }
