@@ -1,0 +1,6 @@
+module Pods_TruKYCOkta {
+  umbrella header "Pods-TruKYCOkta-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,649 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F1EC97A282C464800AE8ACE /* SignInFasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1EC979282C464800AE8ACE /* SignInFasterViewController.swift */; };
+		7F37B85027F7950C00211492 /* Okta.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F37B84F27F7950C00211492 /* Okta.plist */; };
+		7F37B85227FB711800211492 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37B85127FB711800211492 /* SignInViewModel.swift */; };
+		7F47B97927F6361D00E78495 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47B97827F6361D00E78495 /* RootCoordinator.swift */; };
+		7F4BDF5F281F68D800B4FC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA732B727F6190200C38E10 /* Assets.xcassets */; };
+		7F4BDF612820490700B4FC3B /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BDF602820490700B4FC3B /* WelcomeViewModel.swift */; };
+		7F808C242811C28E004F7EB0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F808C232811C28E004F7EB0 /* WelcomeViewController.swift */; };
+		7F808C272811C3CE004F7EB0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F808C262811C3CE004F7EB0 /* SettingsViewController.swift */; };
+		7F808C292811C5CC004F7EB0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F808C282811C5CC004F7EB0 /* SettingsViewModel.swift */; };
+		7F808C2B2811C7C6004F7EB0 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F808C2A2811C7C6004F7EB0 /* SettingsCell.swift */; };
+		7F808C2F2811CA29004F7EB0 /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F808C2E2811CA29004F7EB0 /* SettingsCellModel.swift */; };
+		7FA3180928B8351D00770C88 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA3180828B8351D00770C88 /* MailService.swift */; };
+		7FA732AF27F6190000C38E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA732AE27F6190000C38E10 /* AppDelegate.swift */; };
+		7FA732B327F6190000C38E10 /* WebSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA732B227F6190000C38E10 /* WebSignInViewController.swift */; };
+		7FA732BB27F6190200C38E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA732B927F6190200C38E10 /* LaunchScreen.storyboard */; };
+		7FB3137A281B9F5600CF0617 /* Appearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB31379281B9F5600CF0617 /* Appearance+Extensions.swift */; };
+		7FC4AED92805D8E700EF5228 /* UserConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4AED82805D8E700EF5228 /* UserConsentViewModel.swift */; };
+		7FC4AEDB2805D90B00EF5228 /* UserConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4AEDA2805D90B00EF5228 /* UserConsentViewController.swift */; };
+		7FC4AEDF2809F19900EF5228 /* RemediationEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4AEDE2809F19900EF5228 /* RemediationEventsHandler.swift */; };
+		7FD4370827FDF77A00B0717C /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4370727FDF77A00B0717C /* PushNotificationService.swift */; };
+		7FD4370A27FE53C400B0717C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4370927FE53C400B0717C /* MainStoryboard.storyboard */; };
+		7FD4370C27FE580E00B0717C /* StoryboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4370B27FE580E00B0717C /* StoryboardController.swift */; };
+		7FD4371027FE6A9100B0717C /* OktaWebAuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4370F27FE6A9100B0717C /* OktaWebAuthProtocol.swift */; };
+		7FD4371227FE7FDA00B0717C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4371127FE7FDA00B0717C /* UserDefaults+Extensions.swift */; };
+		A045BCD77936895CCFF632EE /* libPods-TruKYCOkta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 568EEC2E3B17298B471A869F /* libPods-TruKYCOkta.a */; };
+		C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; };
+		C1EEBDFB2E38340B00034863 /* Dist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1EEBE242E38362700034863 /* TruKYCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE232E38361600034863 /* TruKYCHandler.swift */; };
+		C1EEBE272E38366600034863 /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE262E38366600034863 /* Lumina */; };
+		C1EEBE292E3836BA00034863 /* TruKYCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE282E3836B400034863 /* TruKYCError.swift */; };
+		C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */; };
+		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
+		C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */; };
+		C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C1EEBDFC2E38340B00034863 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C1EEBDFB2E38340B00034863 /* Dist.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0CA67A457C6C427A2F7F2D70 /* Pods-TruKYCOkta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruKYCOkta.release.xcconfig"; path = "Target Support Files/Pods-TruKYCOkta/Pods-TruKYCOkta.release.xcconfig"; sourceTree = "<group>"; };
+		568EEC2E3B17298B471A869F /* libPods-TruKYCOkta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruKYCOkta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1EC979282C464800AE8ACE /* SignInFasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFasterViewController.swift; sourceTree = "<group>"; };
+		7F37B84F27F7950C00211492 /* Okta.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Okta.plist; sourceTree = "<group>"; };
+		7F37B85127FB711800211492 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		7F37B85627FB904700211492 /* TruKYCOkta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TruKYCOkta.entitlements; sourceTree = "<group>"; };
+		7F47B97827F6361D00E78495 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		7F4BDF602820490700B4FC3B /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		7F808C232811C28E004F7EB0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7F808C262811C3CE004F7EB0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7F808C282811C5CC004F7EB0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7F808C2A2811C7C6004F7EB0 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		7F808C2E2811CA29004F7EB0 /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		7FA3180828B8351D00770C88 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
+		7FA732AB27F6190000C38E10 /* TruKYCOkta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruKYCOkta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA732AE27F6190000C38E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FA732B227F6190000C38E10 /* WebSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSignInViewController.swift; sourceTree = "<group>"; };
+		7FA732B727F6190200C38E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FA732BA27F6190200C38E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FA732BC27F6190200C38E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB31379281B9F5600CF0617 /* Appearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appearance+Extensions.swift"; sourceTree = "<group>"; };
+		7FB3137B281BA2C600CF0617 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7FC4AED82805D8E700EF5228 /* UserConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConsentViewModel.swift; sourceTree = "<group>"; };
+		7FC4AEDA2805D90B00EF5228 /* UserConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConsentViewController.swift; sourceTree = "<group>"; };
+		7FC4AEDE2809F19900EF5228 /* RemediationEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemediationEventsHandler.swift; sourceTree = "<group>"; };
+		7FD4370727FDF77A00B0717C /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		7FD4370927FE53C400B0717C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7FD4370B27FE580E00B0717C /* StoryboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardController.swift; sourceTree = "<group>"; };
+		7FD4370F27FE6A9100B0717C /* OktaWebAuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OktaWebAuthProtocol.swift; sourceTree = "<group>"; };
+		7FD4371127FE7FDA00B0717C /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		B1CFDCA81C8BE566E926D6F0 /* Pods-TruKYCOkta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruKYCOkta.debug.xcconfig"; path = "Target Support Files/Pods-TruKYCOkta/Pods-TruKYCOkta.debug.xcconfig"; sourceTree = "<group>"; };
+		C1EEBDF72E3833FE00034863 /* Dist.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dist.framework; sourceTree = "<group>"; };
+		C1EEBE232E38361600034863 /* TruKYCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruKYCHandler.swift; sourceTree = "<group>"; };
+		C1EEBE282E3836B400034863 /* TruKYCError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruKYCError.swift; sourceTree = "<group>"; };
+		C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwiftUIViewModel.swift; sourceTree = "<group>"; };
+		C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLandingView.swift; sourceTree = "<group>"; };
+		C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnInSwiftUIView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FA732A827F6190000C38E10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1EEBE272E38366600034863 /* Lumina in Frameworks */,
+				C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */,
+				C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */,
+				A045BCD77936895CCFF632EE /* libPods-TruKYCOkta.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F1EC976282C3F7D00AE8ACE /* SignInFaster */ = {
+			isa = PBXGroup;
+			children = (
+				7F1EC979282C464800AE8ACE /* SignInFasterViewController.swift */,
+			);
+			path = SignInFaster;
+			sourceTree = "<group>";
+		};
+		7F808C222811C254004F7EB0 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7F808C232811C28E004F7EB0 /* WelcomeViewController.swift */,
+				7F4BDF602820490700B4FC3B /* WelcomeViewModel.swift */,
+				7FA3180828B8351D00770C88 /* MailService.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		7F808C252811C3BD004F7EB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */,
+				C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */,
+				7F808C262811C3CE004F7EB0 /* SettingsViewController.swift */,
+				7F808C282811C5CC004F7EB0 /* SettingsViewModel.swift */,
+				7F808C2A2811C7C6004F7EB0 /* SettingsCell.swift */,
+				7F808C2E2811CA29004F7EB0 /* SettingsCellModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7FA732A227F6190000C38E10 = {
+			isa = PBXGroup;
+			children = (
+				7FB3137B281BA2C600CF0617 /* README.md */,
+				7FA732AD27F6190000C38E10 /* TruKYCOkta */,
+				7FA732AC27F6190000C38E10 /* Products */,
+				83197E2D06A90DF58F1FE54E /* Pods */,
+				BD216D309765B1909204F7B7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7FA732AC27F6190000C38E10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FA732AB27F6190000C38E10 /* TruKYCOkta.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FA732AD27F6190000C38E10 /* TruKYCOkta */ = {
+			isa = PBXGroup;
+			children = (
+				7F37B85627FB904700211492 /* TruKYCOkta.entitlements */,
+				7FA732AE27F6190000C38E10 /* AppDelegate.swift */,
+				7F47B97827F6361D00E78495 /* RootCoordinator.swift */,
+				7FD4370727FDF77A00B0717C /* PushNotificationService.swift */,
+				7FC4AEDE2809F19900EF5228 /* RemediationEventsHandler.swift */,
+				7F1EC976282C3F7D00AE8ACE /* SignInFaster */,
+				7F808C252811C3BD004F7EB0 /* Settings */,
+				7F808C222811C254004F7EB0 /* WelcomeScreen */,
+				7FC4AED52805D80200EF5228 /* UserConsent */,
+				7FD4370E27FE68EE00B0717C /* Extensions+Utils */,
+				7FD4370D27FE631D00B0717C /* WebSignIn */,
+				7FD4370927FE53C400B0717C /* MainStoryboard.storyboard */,
+				7FA732B727F6190200C38E10 /* Assets.xcassets */,
+				7FA732B927F6190200C38E10 /* LaunchScreen.storyboard */,
+				7FA732BC27F6190200C38E10 /* Info.plist */,
+				7F37B84F27F7950C00211492 /* Okta.plist */,
+			);
+			path = TruKYCOkta;
+			sourceTree = "<group>";
+		};
+		7FC4AED52805D80200EF5228 /* UserConsent */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEBE282E3836B400034863 /* TruKYCError.swift */,
+				C1EEBE232E38361600034863 /* TruKYCHandler.swift */,
+				7FC4AED82805D8E700EF5228 /* UserConsentViewModel.swift */,
+				7FC4AEDA2805D90B00EF5228 /* UserConsentViewController.swift */,
+			);
+			path = UserConsent;
+			sourceTree = "<group>";
+		};
+		7FD4370D27FE631D00B0717C /* WebSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */,
+				7FA732B227F6190000C38E10 /* WebSignInViewController.swift */,
+				7F37B85127FB711800211492 /* SignInViewModel.swift */,
+			);
+			path = WebSignIn;
+			sourceTree = "<group>";
+		};
+		7FD4370E27FE68EE00B0717C /* Extensions+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7FD4370B27FE580E00B0717C /* StoryboardController.swift */,
+				7FD4371127FE7FDA00B0717C /* UserDefaults+Extensions.swift */,
+				7FD4370F27FE6A9100B0717C /* OktaWebAuthProtocol.swift */,
+				7FB31379281B9F5600CF0617 /* Appearance+Extensions.swift */,
+			);
+			path = "Extensions+Utils";
+			sourceTree = "<group>";
+		};
+		83197E2D06A90DF58F1FE54E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1CFDCA81C8BE566E926D6F0 /* Pods-TruKYCOkta.debug.xcconfig */,
+				0CA67A457C6C427A2F7F2D70 /* Pods-TruKYCOkta.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD216D309765B1909204F7B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEBDF72E3833FE00034863 /* Dist.framework */,
+				568EEC2E3B17298B471A869F /* libPods-TruKYCOkta.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FA732AA27F6190000C38E10 /* TruKYCOkta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FA732D527F6190200C38E10 /* Build configuration list for PBXNativeTarget "TruKYCOkta" */;
+			buildPhases = (
+				F3B31ADFA1FF264BAC99BC8E /* [CP] Check Pods Manifest.lock */,
+				7FA732A727F6190000C38E10 /* Sources */,
+				7FA732A827F6190000C38E10 /* Frameworks */,
+				7FA732A927F6190000C38E10 /* Resources */,
+				C1EEBDFC2E38340B00034863 /* Embed Frameworks */,
+				F4104B6ED2E8354B34EAF6A3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TruKYCOkta;
+			packageProductDependencies = (
+				C1EEBE262E38366600034863 /* Lumina */,
+				C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */,
+			);
+			productName = SampleApp;
+			productReference = 7FA732AB27F6190000C38E10 /* TruKYCOkta.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FA732A327F6190000C38E10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					7FA732AA27F6190000C38E10 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 7FA732A627F6190000C38E10 /* Build configuration list for PBXProject "search pa" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FA732A227F6190000C38E10;
+			packageReferences = (
+				C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */,
+				C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
+			);
+			productRefGroup = 7FA732AC27F6190000C38E10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FA732AA27F6190000C38E10 /* TruKYCOkta */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FA732A927F6190000C38E10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA732BB27F6190200C38E10 /* LaunchScreen.storyboard in Resources */,
+				7FD4370A27FE53C400B0717C /* MainStoryboard.storyboard in Resources */,
+				7F4BDF5F281F68D800B4FC3B /* Assets.xcassets in Resources */,
+				7F37B85027F7950C00211492 /* Okta.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F3B31ADFA1FF264BAC99BC8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruKYCOkta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4104B6ED2E8354B34EAF6A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruKYCOkta/Pods-TruKYCOkta-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruKYCOkta/Pods-TruKYCOkta-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TruKYCOkta/Pods-TruKYCOkta-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FA732A727F6190000C38E10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD4370827FDF77A00B0717C /* PushNotificationService.swift in Sources */,
+				7F37B85227FB711800211492 /* SignInViewModel.swift in Sources */,
+				7FC4AEDB2805D90B00EF5228 /* UserConsentViewController.swift in Sources */,
+				7FD4371227FE7FDA00B0717C /* UserDefaults+Extensions.swift in Sources */,
+				C1EEBE292E3836BA00034863 /* TruKYCError.swift in Sources */,
+				7FC4AED92805D8E700EF5228 /* UserConsentViewModel.swift in Sources */,
+				C1EEBE242E38362700034863 /* TruKYCHandler.swift in Sources */,
+				7FA732B327F6190000C38E10 /* WebSignInViewController.swift in Sources */,
+				7F808C2F2811CA29004F7EB0 /* SettingsCellModel.swift in Sources */,
+				7F47B97927F6361D00E78495 /* RootCoordinator.swift in Sources */,
+				7F808C242811C28E004F7EB0 /* WelcomeViewController.swift in Sources */,
+				7FD4371027FE6A9100B0717C /* OktaWebAuthProtocol.swift in Sources */,
+				C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */,
+				C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */,
+				C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */,
+				7FA732AF27F6190000C38E10 /* AppDelegate.swift in Sources */,
+				7F808C272811C3CE004F7EB0 /* SettingsViewController.swift in Sources */,
+				7FA3180928B8351D00770C88 /* MailService.swift in Sources */,
+				7F1EC97A282C464800AE8ACE /* SignInFasterViewController.swift in Sources */,
+				7FB3137A281B9F5600CF0617 /* Appearance+Extensions.swift in Sources */,
+				7FD4370C27FE580E00B0717C /* StoryboardController.swift in Sources */,
+				7FC4AEDF2809F19900EF5228 /* RemediationEventsHandler.swift in Sources */,
+				7F4BDF612820490700B4FC3B /* WelcomeViewModel.swift in Sources */,
+				7F808C2B2811C7C6004F7EB0 /* SettingsCell.swift in Sources */,
+				7F808C292811C5CC004F7EB0 /* SettingsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7FA732B927F6190200C38E10 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FA732BA27F6190200C38E10 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FA732D327F6190200C38E10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7FA732D427F6190200C38E10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FA732D627F6190200C38E10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1CFDCA81C8BE566E926D6F0 /* Pods-TruKYCOkta.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TruKYCOkta/TruKYCOkta.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33BJ727SMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TruKYCOkta/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TruKYCOkta uses Facial Recognition to verify your identity.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yella.TruKYCOkta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FA732D727F6190200C38E10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA67A457C6C427A2F7F2D70 /* Pods-TruKYCOkta.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TruKYCOkta/TruKYCOkta.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33BJ727SMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TruKYCOkta/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TruKYCOkta uses Facial Recognition to verify your identity.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yella.TruKYCOkta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FA732A627F6190000C38E10 /* Build configuration list for PBXProject "search pa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA732D327F6190200C38E10 /* Debug */,
+				7FA732D427F6190200C38E10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FA732D527F6190200C38E10 /* Build configuration list for PBXNativeTarget "TruKYCOkta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA732D627F6190200C38E10 /* Debug */,
+				7FA732D727F6190200C38E10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dokun1/Lumina.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.2;
+			};
+		};
+		C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/okta/okta-mobile-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1EEBE262E38366600034863 /* Lumina */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */;
+			productName = Lumina;
+		};
+		C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
+			productName = WebAuthenticationUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7FA732A327F6190000C38E10 /* Project object */;
+}
