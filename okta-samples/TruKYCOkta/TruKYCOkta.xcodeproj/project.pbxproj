@@ -22,12 +22,12 @@
 		C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; };
 		C1EEBDFB2E38340B00034863 /* Dist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEBDF72E3833FE00034863 /* Dist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1EEBE242E38362700034863 /* TruKYCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE232E38361600034863 /* TruKYCHandler.swift */; };
-		C1EEBE272E38366600034863 /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE262E38366600034863 /* Lumina */; };
 		C1EEBE292E3836BA00034863 /* TruKYCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE282E3836B400034863 /* TruKYCError.swift */; };
 		C1EEBE2F2E3968A600034863 /* SettingsSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE2E2E39689E00034863 /* SettingsSwiftUIViewModel.swift */; };
 		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
 		C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */; };
 		C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */; };
+		C1EEBE412E3C14D900034863 /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE402E3C14D900034863 /* Lumina */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1EEBE272E38366600034863 /* Lumina in Frameworks */,
+				C1EEBE412E3C14D900034863 /* Lumina in Frameworks */,
 				C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */,
 				C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */,
 				A045BCD77936895CCFF632EE /* libPods-TruKYCOkta.a in Frameworks */,
@@ -200,8 +200,8 @@
 			);
 			name = TruKYCOkta;
 			packageProductDependencies = (
-				C1EEBE262E38366600034863 /* Lumina */,
 				C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */,
+				C1EEBE402E3C14D900034863 /* Lumina */,
 			);
 			productName = SampleApp;
 			productReference = 7FA732AB27F6190000C38E10 /* TruKYCOkta.app */;
@@ -232,8 +232,8 @@
 			);
 			mainGroup = 7FA732A227F6190000C38E10;
 			packageReferences = (
-				C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */,
 				C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
+				C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */,
 			);
 			productRefGroup = 7FA732AC27F6190000C38E10 /* Products */;
 			projectDirPath = "";
@@ -535,14 +535,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dokun1/Lumina.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.2;
-			};
-		};
 		C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/okta/okta-mobile-swift";
@@ -551,18 +543,26 @@
 				version = 1.4.3;
 			};
 		};
+		C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dokun1/Lumina.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C1EEBE262E38366600034863 /* Lumina */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1EEBE252E38366600034863 /* XCRemoteSwiftPackageReference "Lumina" */;
-			productName = Lumina;
-		};
 		C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
 			productName = WebAuthenticationUI;
+		};
+		C1EEBE402E3C14D900034863 /* Lumina */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */;
+			productName = Lumina;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
