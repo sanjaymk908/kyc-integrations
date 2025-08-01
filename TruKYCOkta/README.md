@@ -1,83 +1,181 @@
-#  Okta Authenticator Sample App
+# Okta Authenticator Sample App
 
 This sample app demonstrates how to integrate [Okta Devices SDK](https://github.com/okta/okta-devices-swift) into an Xcode project.
 
 **Table of Contents**
-- [Okta Authenticator Sample App](#okta-authenticator-sample-app)
+- [TruKYC Okta Integration App](#trukyc-okta-integration-app)
   - [Prerequisites](#prerequisites)
-  - [Update Okta.plist](#update-okta.plist)
-  - [Run the project](#run-the-project)
-  - [Enroll the app as a custom authenticator](#enroll-the-app-as-a-custom-authenticator)
-  - [Verify it works](#verify-it-works)
-  
-## Prerequisites
-### Admin prerequisites
-In order to use this project, your org's admin needs to:
-1. Add an OIDC app with the proper scopes (`okta.myAccount.appAuthenticator.manage`, `okta.myAccount.appAuthenticator.read` and `openid`).
-2. Create an `APNs` config.
-3. Create a custom authenticator using the `APNs` config created above.
+  - [Update Okta.plist](#update-oktaplist)
+  - [Run the Project](#run-the-project)
+  - [Enroll the App as a Custom Authenticator](#enroll-the-app-as-a-custom-authenticator)
+  - [Verify It Works](#verify-it-works)
+  - [Implementing the SDK in Your Project](#implementing-the-sdk-in-your-project)
+  - [Debugging Tips](#debugging-tips)
 
-### Client prerequisites
-1. Create a new App ID on your Apple Developer portal with the `App Groups`, `Push Notifications` and `Time Sensitive Notifications` capabilities enabled.
-2. Install [CocoaPods](http://cocoapods.org)
+## TruKYC Okta Integration App
+
+### Prerequisites
+
+#### Admin Prerequisites
+1. Add a Native OIDC app with the proper scopes:  
+   `okta.authenticators.manage.self`, `okta.authenticators.read`, `okta.devices.manage`, `okta.devices.read`,  
+   `okta.factors.manage`, `okta.myAccount.appAuthenticator.maintenance.manage`, `okta.myAccount.appAuthenticator.maintenance.read`,  
+   `okta.myAccount.appAuthenticator.manage`, `okta.myAccount.appAuthenticator.read`, `okta.users.manage`, `okta.users.read.self`.
+
+2. Create an **APNS config** at [Apple Developer Portal](https://developer.apple.com).  
+   The Bundle ID should match this app’s bundle ID (`com.yella.TruKYCOkta`).  
+   Download the `.p8` APNS key for use during Okta setup.
+
+3. Create a custom authenticator in Okta using the APNS configuration created above.
+
+#### Client Prerequisites
+1. If your client app is **Xcode-managed**, add the following capabilities to the app target under `Signing & Capabilities`:
+   - App Groups
+   - Push Notifications
+   - Time Sensitive Notifications
+
+   If not, create a new App ID in the Apple Developer portal with these capabilities enabled.
+
+2. Install [CocoaPods](http://cocoapods.org) if not already installed.
+
+---
 
 ## Update Okta.plist
-This SDK needs an access token to authenticate with backend API calls. For this sample app we're using [Okta Mobile SDK](https://github.com/okta/okta-mobile-swift) for signing-in and obtaining access token. Before signing in, you need to create your client configuration using the settings defined in your application in the Okta Developer Console. The simplest approach is to use a `Okta.plist` configuration file to specify these settings.
 
-Locate `Okta.plist` file and update the following values:
-1. `{clientId}` - OIDC Client ID.
-2. `{issuer}` - App's domain supporting oAuth2 `(https://{myDomain}.com`)
-3. `{redirectUri}` - Redirect URI configured on your app.
-4. `{logoutRedirectUri}` - Logout Redirect URI configured on your app.
+This SDK needs an access token for backend authentication. We're using [Okta Mobile SDK](https://github.com/okta/okta-mobile-swift) for sign-in and token retrieval.
 
-## Run the project
-1. Open your Terminal and change to the directory where the `podfile` is located:
-    ```ruby
-    cd Examples/PushSampleApp/
+Update the `Okta.plist` file with your Okta app’s values:
+1. `{clientId}` – OIDC Client ID
+2. `{issuer}` – App’s OAuth2 domain (e.g. `https://yourdomain.okta.com`)
+3. `{redirectUri}` – Must match what's configured in your app
+4. `{logoutRedirectUri}` – Must match what’s configured in your app
+5. `{scopes}` – Include:
+   - `openid`
+   - `offline_access`
+   - `profile`
+   - `email`
+   - `okta.myAccount.appAuthenticator.manage`
+   - `okta.myAccount.appAuthenticator.read`
+
+---
+
+## Run the Project
+
+1. Open Terminal and navigate to the project directory:
+    ```bash
+    cd TruKYCOkta/
     ```
-    Make sure you have the latest dependencies locally by running:
-    ```ruby
+
+2. Update and install pods:
+    ```bash
     pod repo update
-    ```
-    Then run this to install the pod:
-    ```ruby
     pod install
     ```
 
-2. Open `SampleApp.xcworkspace` file.
+3. Open the `.xcworkspace` file:
+    ```bash
+    open TruKYCOkta.xcworkspace
+    ```
 
-3. Open Project Settings and change the Bundle Identifier to the App ID you previously created, this has to match the BundleID you specified on your Okta Admin portal.
+4. In Xcode, update the Bundle Identifier in project settings to match your Apple Developer App ID.
 
-4. Open `Signing and Capabilities` tab and add a new App Group (e.g. `group.com.okta.SampleApp`).
+5. Under `Signing & Capabilities`, add your App Group (e.g. `group.group.com.yella.TruKYCOkta`).  
+   If it differs from the default, update the `applicationGroupID` in `AppDelegate.swift`.
 
-    If your App Group is other than `group.com.okta.SampleApp`, open `AppDelegate.swift` file and replace `applicationGroupID` constant with your own App Group.
+6. Build and run on a **real device** 📲 for Push Notifications & Camera access.
 
-5. Build and run the project. Keep in mind you need a **real device** 📲 for Push Notifications to work.
+---
 
-## Enroll the app as a custom authenticator
+## Enroll the App as a Custom Authenticator
 
-In order to try the SDK capabilities, you need to Sign In on the app with your org's credentials.
+Sign in using your Okta org credentials in the app. Then:
 
-Once signed in, tap the Settings button at the top-right corner and enable the `Sign in with push notification` toggle. This will call the SDK and initiate the enrollment in order to set up your device as push authenticator. If everything succeeded you will get a success alert.
+1. Enable **Sign in with Push Notification**.  
+   This will trigger SDK enrollment and register your device as a push authenticator.
 
-## Verify it works
-On a browser, try to log in on your org's website and select your Custom Push Authenticator method. You will receive a Push Notification on your device asking you to verify your identity, similar to this:
+2. On success, you’ll see a success alert confirming enrollment.
 
-<img src="./resources/push.png" width="350">
+---
 
-Once tapping the notification, you will be taken to a screen to verify your identity. Tapping `Yes, it's me` will invoke the SDK and proceed to your org's signed in flow.
+## Verify It Works
 
-If you want to enable biometrics for verification, toggle the "Enable biometrics" option. This will ask you to verify with FaceID or TouchID next time you try to sign in with a Push Notification. 
+1. On a browser, sign in to your Okta org.
+2. After password entry, you should receive a push notification.
+3. Tap the notification to launch the app and complete verification via the TruKYC SDK.
+4. If successful, you’ll be signed in.
 
-### Push delivery issues
-If for some reason there's an issue receiving push notifications, the SDK (and therefore this app) is able to pull pending challenges everytime the app is foregrounded. If there's a pending challenge, simply open the app and you will be asked for verification.
+---
 
+### Push Delivery Issues
 
-## Implementing the SDK on your Project
-1. `NSFaceIDUsageDescription` key
+If notifications fail to arrive, the SDK will poll for pending challenges when the app is foregrounded.  
+If there’s one pending, the app will prompt you for verification.
 
-    Add this key to your app's `Info.plist` in order to enable Biometrics for User Verification. Failure to do this will result in your app being terminated with a `__CRASHING_DUE_TO_PRIVACY_VIOLATION__` crash. 
+---
 
-2. `apsEnvironment`
+## Implementing the SDK in Your Project
 
-    This sample app uses the `APSEnvironment.debug` config when initializing this SDK. Make sure to use `.production` for your production build accordingly.
+1. **`NSCameraUsageDescription`**
+
+    Add this key to your app’s `Info.plist` to enable camera access:
+    ```xml
+    <key>NSCameraUsageDescription</key>
+    <string>Used for facial identity verification via TruKYC</string>
+    ```
+
+    If missing, the app will **crash at runtime** when attempting to access the camera.
+
+2. **`apsEnvironment`**
+
+    Ensure your app uses the correct push notification environment.
+
+    - In `Entitlements.plist`, add:
+      ```xml
+      <key>aps-environment</key>
+      <string>development</string>
+      ```
+
+      Replace with `production` for production builds.
+
+3. **Age Verification Check**
+
+    In `TruKYCHandler.swift`, the following logic checks that the user is over 21:
+    ```swift
+    if result.isSelfieReal && result.isUserAbove21 {
+        // Proceed
+    }
+    ```
+
+    To allow users under 21 with valid IDs, use:
+    ```swift
+    if result.isSelfieReal && (result.isUserAbove21 || result.isUserBelow21) {
+        // Proceed
+    }
+    ```
+
+---
+
+## Debugging Tips
+
+1. **Push Not Received**
+
+    - Use the [Apple APNs Console](https://developer.apple.com/account/resources/identifiers/list/push) to send test pushes.
+    - Ensure the push targets the correct bundle ID.
+
+2. **Unable to Sign In After Username Entry**
+
+    - Ensure the device is already enrolled via this TruKYC Okta app.
+    - Otherwise, sign-in won’t proceed to password or verification steps.
+
+3. **Check Enrollment Status**
+
+    - In the Okta Admin Console, go to **System Logs**.
+    - Successful enrollments show `Authentication of user via MFA SUCCESS`.
+    - Deleted enrollments show `Reset factor for user SUCCESS`.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
