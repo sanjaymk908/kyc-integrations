@@ -4,6 +4,30 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/Lumina.framework/Info.plist</key>
+		<data>
+		SirzhEe2y7uT08vqBuIkf2p6sc0=
+		</data>
+		<key>Frameworks/Lumina.framework/Lumina</key>
+		<data>
+		JC4PO4lFMmFApnp4MPINzMbXImY=
+		</data>
+		<key>Frameworks/Lumina.framework/Package.resolved</key>
+		<data>
+		/sWx4LdbAkZTJpeKmw71IgecHpg=
+		</data>
+		<key>Frameworks/Lumina.framework/_CodeSignature/CodeResources</key>
+		<data>
+		qTgSJmVmtMhRmfCObptRDhslcuw=
+		</data>
+		<key>Frameworks/Lumina.framework/luminaDemo.gif</key>
+		<data>
+		Whjxn5cRbxX5P0p50sJGB9BOS8I=
+		</data>
+		<key>Frameworks/Lumina.framework/luminaLogo.png</key>
+		<data>
+		3SUT0t0z2PviqGsA0gdepRwzfvg=
+		</data>
 		<key>Frameworks/onnxruntime.framework/Info.plist</key>
 		<data>
 		dNegCVlhEHQtkeEE4KrJ7s8Pn/g=
@@ -14,35 +38,35 @@
 		</data>
 		<key>Frameworks/onnxruntime.framework/onnxruntime</key>
 		<data>
-		4FxLcXK4x3EGX1Oo7NY8CsZUaXA=
+		jGIg8tSAm/LklGISuPaz4IhiIsY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yaxNPig4Rg7ChPWqtP3ftPzsLZ4=
+		K4vt9WjRL+lkhrPrUeyAcygDoqA=
 		</data>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		nJnM3ebRpZ161yFurD0wPxPHxrg=
+		WUABg7X9RykFseQHegRa2OOUqTg=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		cnfHz4ljVFvrjhJ+xFZWh1I3Z2Q=
+		IcLghTf7/FUgdq6S/SmLHJJfSWk=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		YTkBUgiZcS3IOUVVGcUOI7NkPWQ=
+		J3xgrpNvYMXWghWPehI1IMFHZto=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		XxcIerggJLOKRV1w2h7l2yFaMqY=
+		7zP0lF8ItUJVIY+4YfgQ51WJECk=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		YTkBUgiZcS3IOUVVGcUOI7NkPWQ=
+		J3xgrpNvYMXWghWPehI1IMFHZto=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		KCpDT76iauqP78o6qvU5Pt5x92M=
+		KVcjBvWUYq65XfKEsjKuf4BAgho=
 		</data>
 		<key>clip_image_encoder.quant.onnx</key>
 		<data>
@@ -55,6 +79,48 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Lumina.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G4NyDwgdYDChdKFr5ZkgAOPJUAhNJPwjcumU5LYTip4=
+			</data>
+		</dict>
+		<key>Frameworks/Lumina.framework/Lumina</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			De5BwFgXY33aBTj2elPOXfe2uAakq9u2QVsHiibcPsA=
+			</data>
+		</dict>
+		<key>Frameworks/Lumina.framework/Package.resolved</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Mwd+O32w7luFv46SnthJxgESQ7u9o5IjowM4kzyEU6o=
+			</data>
+		</dict>
+		<key>Frameworks/Lumina.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			C0bxJXlz9HQRYbmYu0+LZYJ9i4N8rmzJlX7GaMII4z8=
+			</data>
+		</dict>
+		<key>Frameworks/Lumina.framework/luminaDemo.gif</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yf0hE83TblbesAWjDrB59fbHaq4gGmKsh9G+kvm0ppo=
+			</data>
+		</dict>
+		<key>Frameworks/Lumina.framework/luminaLogo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			43dPKivKpSGDAjE5wzRq2DEm5ZJm6xv6oRCcn1yt6fU=
+			</data>
+		</dict>
 		<key>Frameworks/onnxruntime.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -73,49 +139,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MvITkZyBIAYWF+6FNcjpMRSQVocYWC3FhAcO6fc7JMs=
+			KNzDJWanX/8y6OFjfOpI7nWyEOEyr8J/PMjOvdxEYpA=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dmEVhn+HEQfHsB455T9a+TmjOcuE6pMll+AcKv3P/S0=
+			Fd495JlDLgb2uqpNR4x1UIMpjHsWYlyQbUyW4w5QMV0=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d8lA2ek/JBZ9IsOJ7r+kIlnoFX28KVHiZQTervqrUtw=
+			YMFdCuSRk0Uh6DapofrUNHjRoUZJg7V9EtaQEdukRbQ=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EO7LG9Ry4ITZBXpwGHNosyKr8QA+QQtl6xYRCt/i08E=
+			7Qwe2+mprKsmLhVMmccKfRCUsW2MUk1tQElt8iDXJ+w=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qE8Adxb+1NmwGZ5Y75wZpBmBHPyAMrtLOCwVi8RMGn0=
+			0QKLdZ/YGBn+XafL7z6+u7gvHYekM9cSRBHW44fDJww=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EO7LG9Ry4ITZBXpwGHNosyKr8QA+QQtl6xYRCt/i08E=
+			7Qwe2+mprKsmLhVMmccKfRCUsW2MUk1tQElt8iDXJ+w=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qC2ADL3DHns7kRfRjqf5ImuuNlQDHINwRmrpq3xhl0w=
+			H79s+0W4rHUJyJVjkrFOHocidqpbcdqnX3fEpLkk1AU=
 			</data>
 		</dict>
 		<key>clip_image_encoder.quant.onnx</key>

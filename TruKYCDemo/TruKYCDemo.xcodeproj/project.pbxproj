@@ -6,28 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		C1E41B012E2FE01900659C8C /* AuthFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B002E2FE01900659C8C /* AuthFoundation */; };
-		C1E41B032E2FE01900659C8C /* BrowserSignin in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B022E2FE01900659C8C /* BrowserSignin */; };
-		C1E41B052E2FE01900659C8C /* OAuth2Auth in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B042E2FE01900659C8C /* OAuth2Auth */; };
-		C1E41B072E2FE01900659C8C /* OktaDirectAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B062E2FE01900659C8C /* OktaDirectAuth */; };
-		C1E41B092E2FE01900659C8C /* OktaIdxAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B082E2FE01900659C8C /* OktaIdxAuth */; };
-		C1E41B0F2E30153500659C8C /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B0E2E30153500659C8C /* Lumina */; };
-		C1E41B132E3026E900659C8C /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1E41B122E3026E900659C8C /* Lumina */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		C1C1CA7D2E2AD7DB0023F149 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1E41AE32E2F0A9C00659C8C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -41,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		C1C1CA682E2AD6BB0023F149 /* TruKYCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruKYCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1E41A942E2F04F100659C8C /* TruKYCOkta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruKYCOkta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -55,22 +34,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		C1E41A7F2E2F01D200659C8C /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */ = {
+		C1BE0BF12E3C3EC6000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			attributesByRelativePath = {
 				Frameworks/Dist.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
 			};
 			buildPhase = C1C1CA7D2E2AD7DB0023F149 /* Embed Frameworks */;
-			membershipExceptions = (
-				Frameworks/Dist.framework,
-			);
-		};
-		C1E41AE42E2F0A9C00659C8C /* Exceptions for "TruKYCOkta" folder in "Embed Frameworks" phase from "TruKYCOkta" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			attributesByRelativePath = {
-				Frameworks/Dist.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
-			};
-			buildPhase = C1E41AE32E2F0A9C00659C8C /* Embed Frameworks */;
 			membershipExceptions = (
 				Frameworks/Dist.framework,
 			);
@@ -82,17 +51,9 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				C1C1CA862E2AD9C10023F149 /* Exceptions for "TruKYCDemo" folder in "TruKYCDemo" target */,
-				C1E41A7F2E2F01D200659C8C /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */,
+				C1BE0BF12E3C3EC6000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */,
 			);
 			path = TruKYCDemo;
-			sourceTree = "<group>";
-		};
-		C1E41A952E2F04F100659C8C /* TruKYCOkta */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C1E41AE42E2F0A9C00659C8C /* Exceptions for "TruKYCOkta" folder in "Embed Frameworks" phase from "TruKYCOkta" target */,
-			);
-			path = TruKYCOkta;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -102,20 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1E41B0F2E30153500659C8C /* Lumina in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1E41A912E2F04F100659C8C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1E41B132E3026E900659C8C /* Lumina in Frameworks */,
-				C1E41B092E2FE01900659C8C /* OktaIdxAuth in Frameworks */,
-				C1E41B012E2FE01900659C8C /* AuthFoundation in Frameworks */,
-				C1E41B032E2FE01900659C8C /* BrowserSignin in Frameworks */,
-				C1E41B072E2FE01900659C8C /* OktaDirectAuth in Frameworks */,
-				C1E41B052E2FE01900659C8C /* OAuth2Auth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				C1C1CA6A2E2AD6BB0023F149 /* TruKYCDemo */,
-				C1E41A952E2F04F100659C8C /* TruKYCOkta */,
-				C1E41AEC2E2F0B5F00659C8C /* Frameworks */,
 				C1C1CA692E2AD6BB0023F149 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,16 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				C1C1CA682E2AD6BB0023F149 /* TruKYCDemo.app */,
-				C1E41A942E2F04F100659C8C /* TruKYCOkta.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C1E41AEC2E2F0B5F00659C8C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,39 +106,9 @@
 			);
 			name = TruKYCDemo;
 			packageProductDependencies = (
-				C1E41B0E2E30153500659C8C /* Lumina */,
 			);
 			productName = TruKYCDemo;
 			productReference = C1C1CA682E2AD6BB0023F149 /* TruKYCDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
-		C1E41A932E2F04F100659C8C /* TruKYCOkta */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1E41A9E2E2F04F300659C8C /* Build configuration list for PBXNativeTarget "TruKYCOkta" */;
-			buildPhases = (
-				C1E41A902E2F04F100659C8C /* Sources */,
-				C1E41A912E2F04F100659C8C /* Frameworks */,
-				C1E41A922E2F04F100659C8C /* Resources */,
-				C1E41AE32E2F0A9C00659C8C /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C1E41A952E2F04F100659C8C /* TruKYCOkta */,
-			);
-			name = TruKYCOkta;
-			packageProductDependencies = (
-				C1E41B002E2FE01900659C8C /* AuthFoundation */,
-				C1E41B022E2FE01900659C8C /* BrowserSignin */,
-				C1E41B042E2FE01900659C8C /* OAuth2Auth */,
-				C1E41B062E2FE01900659C8C /* OktaDirectAuth */,
-				C1E41B082E2FE01900659C8C /* OktaIdxAuth */,
-				C1E41B122E3026E900659C8C /* Lumina */,
-			);
-			productName = TruKYCOkta;
-			productReference = C1E41A942E2F04F100659C8C /* TruKYCOkta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,9 +124,6 @@
 					C1C1CA672E2AD6BB0023F149 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					C1E41A932E2F04F100659C8C = {
-						CreatedOnToolsVersion = 16.3;
-					};
 				};
 			};
 			buildConfigurationList = C1C1CA632E2AD6BB0023F149 /* Build configuration list for PBXProject "TruKYCDemo" */;
@@ -232,8 +136,6 @@
 			mainGroup = C1C1CA5F2E2AD6BB0023F149;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
-				C1E41B0D2E30153500659C8C /* XCRemoteSwiftPackageReference "Lumina" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C1C1CA692E2AD6BB0023F149 /* Products */;
@@ -241,7 +143,6 @@
 			projectRoot = "";
 			targets = (
 				C1C1CA672E2AD6BB0023F149 /* TruKYCDemo */,
-				C1E41A932E2F04F100659C8C /* TruKYCOkta */,
 			);
 		};
 /* End PBXProject section */
@@ -254,24 +155,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1E41A922E2F04F100659C8C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1C1CA642E2AD6BB0023F149 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1E41A902E2F04F100659C8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,72 +364,6 @@
 			};
 			name = Release;
 		};
-		C1E41A9C2E2F04F300659C8C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 33BJ727SMS;
-				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TruKYCOkta/Frameworks",
-				);
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yella.TruKYCOkta;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C1E41A9D2E2F04F300659C8C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 33BJ727SMS;
-				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TruKYCOkta/Frameworks",
-				);
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yella.TruKYCOkta;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,73 +385,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1E41A9E2E2F04F300659C8C /* Build configuration list for PBXNativeTarget "TruKYCOkta" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1E41A9C2E2F04F300659C8C /* Debug */,
-				C1E41A9D2E2F04F300659C8C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/okta/okta-mobile-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-		C1E41B0D2E30153500659C8C /* XCRemoteSwiftPackageReference "Lumina" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dokun1/Lumina.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C1E41B002E2FE01900659C8C /* AuthFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = AuthFoundation;
-		};
-		C1E41B022E2FE01900659C8C /* BrowserSignin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = BrowserSignin;
-		};
-		C1E41B042E2FE01900659C8C /* OAuth2Auth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = OAuth2Auth;
-		};
-		C1E41B062E2FE01900659C8C /* OktaDirectAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = OktaDirectAuth;
-		};
-		C1E41B082E2FE01900659C8C /* OktaIdxAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41AFF2E2FE01900659C8C /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
-			productName = OktaIdxAuth;
-		};
-		C1E41B0E2E30153500659C8C /* Lumina */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41B0D2E30153500659C8C /* XCRemoteSwiftPackageReference "Lumina" */;
-			productName = Lumina;
-		};
-		C1E41B122E3026E900659C8C /* Lumina */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1E41B0D2E30153500659C8C /* XCRemoteSwiftPackageReference "Lumina" */;
-			productName = Lumina;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1C1CA602E2AD6BB0023F149 /* Project object */;
 }

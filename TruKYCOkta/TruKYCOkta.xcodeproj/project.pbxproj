@@ -27,7 +27,6 @@
 		C1EEBE312E3968D000034863 /* SettingsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE302E3968CA00034863 /* SettingsLandingView.swift */; };
 		C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */; };
 		C1EEBE3D2E3AA57100034863 /* SIgnInSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEBE3C2E3AA56700034863 /* SIgnInSwiftUIView.swift */; };
-		C1EEBE412E3C14D900034863 /* Lumina in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEBE402E3C14D900034863 /* Lumina */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1EEBE412E3C14D900034863 /* Lumina in Frameworks */,
 				C1EEBDFA2E38340B00034863 /* Dist.framework in Frameworks */,
 				C1EEBE3B2E3A7A4600034863 /* WebAuthenticationUI in Frameworks */,
 				A045BCD77936895CCFF632EE /* libPods-TruKYCOkta.a in Frameworks */,
@@ -201,7 +199,6 @@
 			name = TruKYCOkta;
 			packageProductDependencies = (
 				C1EEBE3A2E3A7A4600034863 /* WebAuthenticationUI */,
-				C1EEBE402E3C14D900034863 /* Lumina */,
 			);
 			productName = SampleApp;
 			productReference = 7FA732AB27F6190000C38E10 /* TruKYCOkta.app */;
@@ -233,7 +230,6 @@
 			mainGroup = 7FA732A227F6190000C38E10;
 			packageReferences = (
 				C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */,
-				C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */,
 			);
 			productRefGroup = 7FA732AC27F6190000C38E10 /* Products */;
 			projectDirPath = "";
@@ -463,6 +459,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,6 +495,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,14 +541,6 @@
 				version = 1.4.3;
 			};
 		};
-		C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dokun1/Lumina.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -558,11 +548,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C1EEBE392E3A7A4600034863 /* XCRemoteSwiftPackageReference "okta-mobile-swift" */;
 			productName = WebAuthenticationUI;
-		};
-		C1EEBE402E3C14D900034863 /* Lumina */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1EEBE3F2E3C14D900034863 /* XCRemoteSwiftPackageReference "Lumina" */;
-			productName = Lumina;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
