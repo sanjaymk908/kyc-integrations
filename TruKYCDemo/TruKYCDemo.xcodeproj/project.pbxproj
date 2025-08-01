@@ -34,7 +34,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		C1BE0BF12E3C3EC6000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */ = {
+		C1BE0C902E3D2B89000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			attributesByRelativePath = {
 				Frameworks/Dist.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
@@ -51,7 +51,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				C1C1CA862E2AD9C10023F149 /* Exceptions for "TruKYCDemo" folder in "TruKYCDemo" target */,
-				C1BE0BF12E3C3EC6000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */,
+				C1BE0C902E3D2B89000CD7F5 /* Exceptions for "TruKYCDemo" folder in "Embed Frameworks" phase from "TruKYCDemo" target */,
 			);
 			path = TruKYCDemo;
 			sourceTree = "<group>";

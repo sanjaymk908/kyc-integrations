@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/Lumina.framework/Lumina</key>
 		<data>
-		JC4PO4lFMmFApnp4MPINzMbXImY=
+		9RrNatESGi8qZlh838Y7Okq3554=
 		</data>
 		<key>Frameworks/Lumina.framework/Package.resolved</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/onnxruntime.framework/onnxruntime</key>
 		<data>
-		jGIg8tSAm/LklGISuPaz4IhiIsY=
+		M2u7eut5RBiFg8/RtPUyqkj/h+U=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		WUABg7X9RykFseQHegRa2OOUqTg=
+		GAek4vLzaDaPJvBI8RXvSNAXAtA=
 		</data>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -90,7 +90,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			De5BwFgXY33aBTj2elPOXfe2uAakq9u2QVsHiibcPsA=
+			TtxDxN/HeDjjcRXUGHvACcOHpXnxC2uj2F7Ah+B+oFo=
 			</data>
 		</dict>
 		<key>Frameworks/Lumina.framework/Package.resolved</key>
@@ -139,14 +139,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KNzDJWanX/8y6OFjfOpI7nWyEOEyr8J/PMjOvdxEYpA=
+			8xrullVSo0Leqq0ODxS2U7rmCwuGPPB2K6wSyWklIGU=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fd495JlDLgb2uqpNR4x1UIMpjHsWYlyQbUyW4w5QMV0=
+			9ssKfe54Tkp5EPtk/2yvQ0FbfrzBEvCfaQNSUzI6Nsg=
 			</data>
 		</dict>
 		<key>Modules/Dist.swiftmodule/arm64-apple-ios.abi.json</key>
